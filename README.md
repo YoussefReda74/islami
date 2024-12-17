@@ -1,4 +1,4 @@
-# islami_c13_monday
+# islami
 
 A new Flutter project.
 
