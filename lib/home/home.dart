@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/home/tabs/ahadeth/ahadeth_tab.dart';
 import 'package:islami/home/tabs/quran_tab/quran_tab.dart';
-import 'package:islami/home/tabs/radio_tab.dart';
-import 'package:islami/home/tabs/sebha_tab.dart';
+import 'package:islami/home/tabs/radio_tap/radio_tab.dart';
+import 'package:islami/home/tabs/sebha_tab/sebha_tab.dart';
+
+
 import 'package:islami/home/tabs/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   icon: _buildNavItem(1, "ahadeth"), label: "Ahadeth"),
               BottomNavigationBarItem(
-                  icon: _buildNavItem(2, "sebha"), label: "Sebha"),
+                  icon: _buildNavItem(2, "sebha1"), label: "Sebha"),
               BottomNavigationBarItem(
                   icon: _buildNavItem(3, "ic_radio"), label: "Radio"),
               BottomNavigationBarItem(
