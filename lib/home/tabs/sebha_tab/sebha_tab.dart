@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
 
@@ -9,6 +8,24 @@ class SebhaTab extends StatefulWidget {
 }
 
 class _SebhaTabState extends State<SebhaTab> {
+  int counter = 0;
+  int zikrIndex = 0;
+  double currentAngle = 0;
+  final List<String> zikrList = ['سبحان الله', 'الحمدلله', 'الله أكبر'];
+
+  void _onSebhaPressed() {
+    setState(() {
+      counter++;
+      currentAngle += 360 / 33;
+
+      if (counter >= 33) {
+        counter = 0;
+        zikrIndex = (zikrIndex + 1) % zikrList.length;
+        currentAngle = 0;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,24 +36,24 @@ class _SebhaTabState extends State<SebhaTab> {
         Text(
           'سَبِّحِ اسْمَ رَبِّكَ الأعلى ',
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Colors.white,
-                fontSize: 38,
-              ),
+            color: Colors.white,
+            fontSize: 38,
+          ),
         ),
-         const SizedBox(
+        const SizedBox(
           height: 16,
         ),
-        InkWell(
-          onTap: () {},
+        GestureDetector(
+          onTap: _onSebhaPressed,
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              Transform.rotate(
+                angle: currentAngle * 3.141592653589793 / 180,
                 child: Image.asset(
                   'assets/images/Sebha.png',
-                  width: double.infinity,
-                  fit: BoxFit.fill,
+                  width:double.infinity,
+                  fit: BoxFit.contain,
                 ),
               ),
               Column(
@@ -46,27 +63,27 @@ class _SebhaTabState extends State<SebhaTab> {
                     height: 30,
                   ),
                   Text(
-                    'سبحان الله',
+                    zikrList[zikrIndex],
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontSize: 38,
-                        ),
+                      color: Colors.white,
+                      fontSize: 38,
+                    ),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   Text(
-                    '30',
+                    (counter % 33).toString(),
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontSize: 38,
-                        ),
+                      color: Colors.white,
+                      fontSize: 38,
+                    ),
                   ),
                 ],
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

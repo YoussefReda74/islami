@@ -6,7 +6,7 @@ import 'package:islami/home/tabs/radio_tap/radio_tab.dart';
 import 'package:islami/home/tabs/sebha_tab/sebha_tab.dart';
 
 
-import 'package:islami/home/tabs/time_tab.dart';
+import 'package:islami/home/tabs/time_tab/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AhadethTab(),
     const SebhaTab(),
     const RadioTab(),
-    const TimeTab(),
+    TimeTab(),
   ];
 
   String getBackgroundImageName(index) {
