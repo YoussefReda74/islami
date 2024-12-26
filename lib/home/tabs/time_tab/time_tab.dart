@@ -1,12 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/home/tabs/time_tab/salaa_time_item.dart';
-
-import '../../../my_theme_data.dart';
+import 'azkar_item.dart';
 
 class TimeTab extends StatelessWidget {
-  TimeTab({super.key});
+  const TimeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +54,10 @@ class TimeTab extends StatelessWidget {
                                       .textTheme
                                       .titleSmall!
                                       .copyWith(
-                                        color: Color(0xb3202020),
+                                        color: const Color(0xb3202020),
                                       ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Text(
@@ -69,7 +66,7 @@ class TimeTab extends StatelessWidget {
                                       .textTheme
                                       .titleSmall!
                                       .copyWith(
-                                        color: Color(0xff202020),
+                                        color: const Color(0xff202020),
                                         fontSize: 20,
                                       ),
                                 ),
@@ -112,70 +109,14 @@ class TimeTab extends StatelessWidget {
             ),
             Row(
               children: [
-                Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 10),
-                        width: 185,
-                        height: 260,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2.5, color: MyThemeData.primaryColor),
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            child: Image.asset(
-                              'assets/images/azkarmorning_img.png',
-                              width: 185,
-                              height: 185,
-                            ),
-                          ),
-                          Text('Evening Azkar',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineMedium!
-                                  .copyWith(color: Colors.white))
-                        ],
-                      ),
-                    ],
-                  ),
+                AzkarItem(
+                  nameOfImage:'azkarmorning_img' ,
+                  titel:'Evening Azkar' ,
                 ),
-                Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        width: 185,
-                        height: 260,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 2.5, color: MyThemeData.primaryColor),
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8, bottom: 8),
-                            child: Image.asset(
-                              'assets/images/evening_azkar_img.png',
-                              width: 185,
-                              height: 185,
-                            ),
-                          ),
-                          Text('Morning Azkar',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineMedium!
-                                  .copyWith(color: Colors.white))
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                AzkarItem(
+                  nameOfImage:'evening_azkar_img' ,
+                  titel:'Morning Azkar' ,
+                )
               ],
             ),
           ],

@@ -49,7 +49,7 @@ class _SebhaTabState extends State<SebhaTab> {
             alignment: Alignment.center,
             children: [
               Transform.rotate(
-                angle: currentAngle * 3.141592653589793 / 180,
+                angle: currentAngle * 3.14 / 180,
                 child: Image.asset(
                   'assets/images/Sebha.png',
                   width:double.infinity,
@@ -57,7 +57,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 ),
               ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+               // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(
                     height: 30,
@@ -66,7 +66,7 @@ class _SebhaTabState extends State<SebhaTab> {
                     zikrList[zikrIndex],
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Colors.white,
-                      fontSize: 38,
+                      fontSize: 40,
                     ),
                   ),
                   const SizedBox(
@@ -77,6 +77,7 @@ class _SebhaTabState extends State<SebhaTab> {
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Colors.white,
                       fontSize: 38,
+
                     ),
                   ),
                 ],
